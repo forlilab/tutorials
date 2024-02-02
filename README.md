@@ -25,7 +25,9 @@ is highly recommended as mistakes are consequential.
 Kubuntu and Ubuntu are popular choices of Linux distributions.
 
 
-## Virtual screening
 
-Soon, we will add a tutorial in which part of matinib will be identified in
-a small screen using molecular docking.
+## Virtual screening workshop
+
+The instructions for the virtual screening tutorial will be made available on the day of the workshop.
+The tutorial will cover the identification of part of a known drug, imatinib, and the process of using
+docking to support early drug discovery.
