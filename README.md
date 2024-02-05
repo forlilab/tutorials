@@ -11,6 +11,11 @@ There are currently two tutorials for installing our software:
 Fell free to open Issues here on GitHub if you encounter any problems.
 The "Issues" tab is the second from the left at the top of this page.
 
+**Mac users:** consider installing Brew, which is the first step in the
+installation instructions, ahead of the workshop, because it will likely
+have to download Xcode Command Line Tools (100 MB) and saturate the network
+if multiple people do it simultaneously.
+
 ### Windows
 
 It should be possible to run our software from the command line
