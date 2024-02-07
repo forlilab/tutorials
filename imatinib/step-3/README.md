@@ -152,7 +152,7 @@ mk_prepare_receptor.py --pdb 3oxz_rot315.pdb -f "A:PHE:382" -o rec_3oxz_rot315 -
 
 Run autogrid to make AD4 maps
 ```
-./autogrid4 -p rec_3oxz_rot315_rigid.gpf -l rec_3oxz_rot315_rigid.glg
+./executables/autogrid4_linux -p rec_3oxz_rot315_rigid.gpf -l rec_3oxz_rot315_rigid.glg
 ```
 
 If `autogrid4` didn't run, use the maps incuded in this repository,
@@ -161,12 +161,12 @@ to vina, instead of `--maps rec_3oxz_rot315_rigid`.
 
 Dock with vina
 ```
-./vina_1.2.4_linux_x86_64 --maps rec_3oxz_rot315_rigid --scoring ad4 --ligand lig.pdbqt --flex rec_3oxz_rot315_flex.pdbqt --out docked/3oxz_ad4.pdbqt
+./vina_1.2.5_linux_x86_64 --maps rec_3oxz_rot315_rigid --scoring ad4 --ligand lig.pdbqt --flex rec_3oxz_rot315_flex.pdbqt --out docked/3oxz_ad4.pdbqt
 ```
 
 Or with AutoDock-GPU
 ```
-./executables/autodock_gpu_mac -M rec_3oxz_rot315_rigid.maps.fld -L lig.pdbqt -F rec_3oxz_rot315_flex.pdbqt -N docked/3oxz_ad4
+./tutorials/executables/autodock_gpu_mac -M rec_3oxz_rot315_rigid.maps.fld -L lig.pdbqt -F rec_3oxz_rot315_flex.pdbqt -N docked/3oxz_ad4
 mk_export.py docked/3oxz_ad4.dlg -c
 ```
 
