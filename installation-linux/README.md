@@ -6,7 +6,7 @@ Installation instructions are on
 You can use micromamba alongside mamba or conda.
 
 Installing it consists of running the following command, and following the
-instructions displayed in the prompt.
+instructions displayed in the prompt. Pasting is Ctrl + shift + V.
 ```
 "${SHELL}" <(curl -L micro.mamba.pm/install.sh)
 ```
@@ -34,7 +34,7 @@ If not, run `micromamba activate autodock`
 micromamba install python=3.11
 micromambe install pymol-open-source
 micromamba install rdkit numpy scipy
-micromamba install chemicalite matplotlib pandas
+micromamba install chemicalite matplotlib=3.7 pandas
 ```
 
 Several packages are being installed in a single line.
@@ -126,7 +126,7 @@ Copy the files in [toy-example-data](../toy-example-data) to the working dir and
 ```
 scrub.py "Oc1ccccc1" -o phenol.sdf
 mk_prepare_ligand.py -i phenol.sdf -o phenol.pdbqt
-mk_prepare_receptor.py --pdb pocket.pdb --skip_gpf -o receptor
+mk_prepare_receptor.py --pdb pocket.pdb --ligand pocket.pdb --padding 5 -o receptor
 mkdir results
 ./vina_1.2.5_linux_x86_64 --receptor receptor.pdbqt --config receptor.box.txt --ligand phenol.pdbqt --out results/phenol.pdbqt
 rt_process_vs.py write -o results.db -fp results -m vina -ai -rf receptor.pdbqt

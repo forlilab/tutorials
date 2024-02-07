@@ -8,13 +8,8 @@ There are currently two tutorials for installing our software:
  - [on linux](installation-linux)
  - [on macOS](installation-mac)
 
-Fell free to open Issues here on GitHub if you encounter any problems.
+Feel free to open Issues here on GitHub if you encounter any problems.
 The "Issues" tab is the second from the left at the top of this page.
-
-**Mac users:** consider installing Brew, which is the first step in the
-installation instructions, ahead of the workshop, because it will likely
-have to download Xcode Command Line Tools (100 MB) and saturate the network
-if multiple people do it simultaneously.
 
 ### Windows
 
@@ -33,6 +28,7 @@ Kubuntu and Ubuntu are popular choices of Linux distributions.
 
 ## Virtual screening workshop
 
-The instructions for the virtual screening tutorial will be made available on the day of the workshop.
-The tutorial will cover the identification of part of a known drug, imatinib, and the process of using
+Covers the identification of part of a known drug, imatinib, and the process of using
 docking to support early drug discovery.
+
+ - Go to [imatinib tutorial](imatinib)
