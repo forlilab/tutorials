@@ -54,10 +54,10 @@ autodock, is active, by checking that the prompt starts with `(autodock)`.
 If not, run `micromamba activate autodock`
 
 ```
-micromamba install python=3.11
-micromambe install pymol-open-source
-micromamba install rdkit numpy scipy
-micromamba install chemicalite matplotlib=3.7 pandas
+micromamba install python=3.11 -y
+micromamba install pymol-open-source -y
+micromamba install rdkit numpy scipy -y
+micromamba install chemicalite matplotlib=3.7 pandas -y
 ```
 
 Several packages are being installed in a single line.
