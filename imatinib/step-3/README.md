@@ -152,7 +152,13 @@ mk_prepare_receptor.py --pdb 3oxz_rot315.pdb -f "A:PHE:382" -o rec_3oxz_rot315 -
 
 Run autogrid to make AD4 maps
 ```
-./executables/autogrid4_linux -p rec_3oxz_rot315_rigid.gpf -l rec_3oxz_rot315_rigid.glg
+./tutorials/executables/autogrid4_linux -p rec_3oxz_rot315_rigid.gpf -l rec_3oxz_rot315_rigid.glg
+```
+
+Give permissions if needed. The `xattr` is only for Macs.
+```
+xattr -d com.apple.quarantine tutorials/executables/autogrid4_mac
+chmod +x tutorials/executables/autogrid4_mac
 ```
 
 If `autogrid4` didn't run, use the maps incuded in this repository,
