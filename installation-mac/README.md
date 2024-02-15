@@ -162,7 +162,7 @@ More info: https://support.apple.com/en-us/HT211861#needsrosetta
 Copy the files in [toy-example-data](../toy-example-data) to the working dir and run the following commands.
 
 ```
-scrub.py "Oc1ccccc1" -o phenol.sdf
+scrub.py "Oc1ccccc1" -o phenol.sdf --cpu 1
 mk_prepare_ligand.py -i phenol.sdf -o phenol.pdbqt
 mk_prepare_receptor.py --pdb pocket.pdb --ligand pocket.pdb --padding 5 -o receptor
 mkdir results
