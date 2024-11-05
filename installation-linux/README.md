@@ -53,14 +53,14 @@ Running the following commands will install meeko and ringtail in
 the currently active micromamba environment.
 
 ```
-pip install meeko==0.6.0a3
 pip install ringtail
+pip install meeko==0.6.0a3
 ```
 
 Running the following commands should display help messages:
 ```
 mk_prepare_ligand.py
-rt_process_vs.py
+rt_process_vs
 ```
 
 A new release of Meeko will be available soon.
@@ -126,10 +126,10 @@ Copy the files in [toy-example-data](../toy-example-data) to the working dir and
 ```
 scrub.py "Oc1ccccc1" -o phenol.sdf
 mk_prepare_ligand.py -i phenol.sdf -o phenol.pdbqt
-mk_prepare_receptor.py --pdb pocket.pdb --ligand pocket.pdb --padding 5 -o receptor
+mk_prepare_receptor.py --read_pdb pocket.pdb --box_enveloping pocket.pdb --padding 5 -o receptor -p -j -v
 mkdir results
 ./vina_1.2.5_linux_x86_64 --receptor receptor.pdbqt --config receptor.box.txt --ligand phenol.pdbqt --out results/phenol.pdbqt
-rt_process_vs.py write -o results.db -fp results -m vina -ai -rf receptor.pdbqt
+rt_process_vs write -o results.db -fp results -m vina -ai -rf receptor.pdbqt -sr
 mkdir passing_sdf
 rt_process_vs.py read -i results.db -e -2 -sdf passing_sdf
 ```
