@@ -35,6 +35,7 @@ micromamba install python=3.11 -y
 micromamba install pymol-open-source -y
 micromamba install rdkit numpy scipy -y
 micromamba install chemicalite matplotlib=3.7 pandas -y
+micromamba install importlib_resources gemmi -y
 ```
 
 Several packages are being installed in a single line.
@@ -60,7 +61,7 @@ pip install meeko==0.6.0a3
 Running the following commands should display help messages:
 ```
 mk_prepare_ligand.py
-rt_process_vs
+rt_process_vs -h
 ```
 
 A new release of Meeko will be available soon.
@@ -131,7 +132,7 @@ mkdir results
 ./vina_1.2.5_linux_x86_64 --receptor receptor.pdbqt --config receptor.box.txt --ligand phenol.pdbqt --out results/phenol.pdbqt
 rt_process_vs write -o results.db -fp results -m vina -ai -rf receptor.pdbqt -sr
 mkdir passing_sdf
-rt_process_vs.py read -i results.db -e -2 -sdf passing_sdf
+rt_process_vs read -i results.db -e -2 -sdf passing_sdf
 ```
 
 A file "phenol.sdf" should have been added to "passing\_sdf".
