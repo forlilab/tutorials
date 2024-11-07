@@ -127,7 +127,7 @@ Copy the files in [toy-example-data](../toy-example-data) to the working dir and
 ```
 scrub.py "Oc1ccccc1" -o phenol.sdf
 mk_prepare_ligand.py -i phenol.sdf -o phenol.pdbqt
-mk_prepare_receptor.py --read_pdb pocket.pdb --box_enveloping pocket.pdb --padding 5 -o receptor -p -j -v
+mk_prepare_receptor.py --read_pdb pocket.pdb --box_enveloping ligand.pdb --padding 5 -o receptor -p -j -v
 mkdir results
 ./vina_1.2.5_linux_x86_64 --receptor receptor.pdbqt --config receptor.box.txt --ligand phenol.pdbqt --out results/phenol.pdbqt
 rt_process_vs write -o results.db -fp results -m vina -ai -rf receptor.pdbqt -sr
