@@ -7,7 +7,7 @@ we will explore options that allow us to recover imatinib.
 First let's look at the distribution of score and ligand efficiency
 (score diveded by number of non-hydrogen atoms).
 ```
-rt_process_vs.py read -i vs_adgpu.db --plot
+rt_process_vs read -i vs_adgpu.db --plot
 ```
 This creates a file named "scatter.png".
 It can be visualized using a file browser.
@@ -16,8 +16,8 @@ It can be visualized using a file browser.
 
 ```
 mkdir passed
-rt_process_vs.py read -i vs_adgpu.db -e -11 -sdf passed/
-pymol tutorials/imatinib/step-2/2hzn_A.pdb rec_3oxz_rigid.pdbqt xray-imatinib.pdb passed/*
+rt_process_vs read -i vs_adgpu.db -e -11 -sdf passed/
+pymol tutorials/imatinib/step-2/2hzn_A.pdb rec_3oxz_rigid.pdbqt xray-imatinib.pdb passed/vs_adgpu_passing_results.sdf 
 ```
 
 The carbamide of ZINC..309 resembles that of the ligand in PDB ID `2hzn`.
@@ -41,7 +41,7 @@ a ligand, Would you rule out imatinib because of the void?
 
 
 ```
-rt_process_vs.py read -i vs_adgpu.db -e -10
+rt_process_vs read -i vs_adgpu.db -e -10
 ```
 
 By opening the file "output\_log.txt", or running `tail output_log.txt`,
@@ -51,7 +51,7 @@ If we assume that most of the molecules are inactive, This is a poor hit rate.
 
 We can see where imatinib is with respect to the other molecules.
 ```
-rt_process_vs.py read -i vs_adgpu.db --plot -n lig
+rt_process_vs read -i vs_adgpu.db --plot -n lig
 ```
 This creates a file called "scatter.png", in which each dot is a molecule,
 the molecules in red are the ones that passed the filter (named "lig" in this case),

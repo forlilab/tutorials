@@ -34,7 +34,7 @@ If not, run `micromamba activate autodock`
 micromamba install python=3.11 -y
 micromamba install pymol-open-source -y
 micromamba install rdkit numpy scipy -y
-micromamba install chemicalite matplotlib=3.7 pandas -y
+micromamba install chemicalite matplotlib=3.7 pandas multiprocess -y
 ```
 
 Several packages are being installed in a single line.

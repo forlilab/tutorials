@@ -41,7 +41,7 @@ cp tutorials/imatinib/step-3/lig.pdbqt .
 
 Convert to PDBQT with meeko:
 ```
-mk_prepare_receptor.py --pdb 2hzn_protein.pdb -o rec_2hzn --padding 5 --ligand xray-imatinib.pdb
+mk_prepare_receptor.py -i 2hzn_protein.pdb -o rec_2hzn -p -v --padding 5 --box_enveloping xray-imatinib.pdb --allow_bad_res
 ```
 
 It throws an error message because some residues have missing atoms.
@@ -51,7 +51,7 @@ Tip: the up-arrow brings up the last command.
 Let's rename two of the files it wrote, with command `mv`:
 
 ```
-mv rec_2hzn.gpf.pdb box.pdb
+mv rec_2hzn.box.pdb box.pdb
 mv rec_2hzn.box.txt box.txt 
 ```
 
@@ -88,13 +88,13 @@ If any does, it's probably not one of the top poses.
 
 PDB ID `3oxz` is more similar to `1iep` than `2hzn`.
 
-Note `--skip_gpf` to skip defining a search space, and `-f "A:PHE:382"`,
+Note `-p` alone to only generate the PDBQT file, and `-f "A:PHE:382"`,
 to make Phe382 flexible. Two receptor PDBQT files are written as a result, one suffixed
 with "\_rigid" for static atoms, and another with "\_flex" for movable atoms.
 
 ```
 cp tutorials/imatinib/step-3/3oxz_protein.pdb .
-mk_prepare_receptor.py --pdb 3oxz_protein.pdb -o rec_3oxz --skip_gpf --allow_bad_res -f "A:PHE:382"
+mk_prepare_receptor.py -i 3oxz_protein.pdb -o rec_3oxz -p --allow_bad_res -f "A:382"
 ```
 
 Dock with vina. Note the `--flex` option.
@@ -147,7 +147,7 @@ save 3oxz_rot315.pdb, 3oxz_protein
 
 Make PDBQTs for this structure:
 ```
-mk_prepare_receptor.py --pdb 3oxz_rot315.pdb -f "A:PHE:382" -o rec_3oxz_rot315 --ligand xray-imatinib.pdb --padding 5 --allow_bad_res
+mk_prepare_receptor.py -i 3oxz_rot315.pdb -f "A:382" -o rec_3oxz_rot315 -p -g --box_enveloping xray-imatinib.pdb --padding 5 --allow_bad_res
 ```
 
 Run autogrid to make AD4 maps
